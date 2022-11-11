@@ -11,10 +11,14 @@ const routes = [
         path: "/fase-grupo",
         component: () => import("pages/grupo/GrupoPage.vue"),
       },
+      {
+        path: "/ranking",
+        component: () => import("pages/ranking/RankingPage.vue"),
+      },
     ],
   },
   {
-    path: "/login",
+    path: "/welcome",
     component: () => import("../pages/LoginPage.vue"),
   },
 

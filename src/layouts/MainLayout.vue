@@ -1,10 +1,11 @@
 <template>
   <q-img src="../assets/neutro.jpg" class="wave" alt="wave" />
   <q-layout class="q-px-xl">
-    <div class="q-pa-md">
-      <q-card class="bg-pink-13" style="height: 100px"> </q-card>
+    <div class="q-px-sm q-py-md q-px-xl">
+      <q-img src="../assets/bg.jpg" class="borda" style="height: 100px">
+      </q-img>
     </div>
-    <div class="row">
+    <div class="row q-px-xl">
       <div class="col-10 col-md-4">
         <div>
           <q-card class="q-mb-md text-white bg-grey-9 borda">
@@ -54,7 +55,7 @@
           </q-card>
         </div>
       </div>
-      <q-page-container class="col-12 col-md-8 q-px-lg q-pt-lg">
+      <q-page-container class="col-12 col-md-8 q-px-lg q-pb-lg">
         <router-view />
       </q-page-container>
     </div>
@@ -73,7 +74,7 @@ const linksList = [
   {
     title: "Ranking",
     icon: "code",
-    to: { nome: "home" },
+    to: "/ranking",
   },
   {
     title: "Fase de Grupo",
@@ -90,7 +91,7 @@ const linksList = [
 export default defineComponent({
   name: "MainLayout",
 
-  setup() {
+  data() {
     const leftDrawerOpen = ref(false);
 
     return {

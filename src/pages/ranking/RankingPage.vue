@@ -6,75 +6,9 @@
     >
       <q-card-section>
         <div class="row justify-center">
-          <div class="text-white" style="font-size: 30px">Fase de Grupo</div>
+          <div class="text-white" style="font-size: 30px">Ranking</div>
         </div>
       </q-card-section>
-    </q-card>
-    <q-card
-      v-for="jogo in jogos"
-      :key="jogo.id"
-      style="height: 140px"
-      class="border bg-grey-9 borda text-white q-mb-md"
-    >
-      <div class="row">
-        <div class="row col-8">
-          <div class="q-pl-lg q-pt-sm">{{ jogo.group }}</div>
-
-          <div class="col-8 col-md-12 q-pt-lg">
-            <div class="row">
-              <div class="col-4 row justify-end">
-                <div>
-                  <span class="q-pr-sm">{{ jogo.team1 }}</span>
-                  <q-avatar class="shadow-12">
-                    <q-img :src="jogo.image1.uri" />
-                  </q-avatar>
-                </div>
-              </div>
-              <div class="col-4 row justify-center items-center">
-                <div class="q-mr-md">
-                  <q-input
-                    outlined
-                    dense
-                    input-class="text-center"
-                    bg-color="white"
-                    style="width: 40px"
-                    v-model="text"
-                    placeholder="0"
-                  />
-                </div>
-                x
-                <div class="q-ml-md">
-                  <q-input
-                    outlined
-                    dense
-                    input-class="text-center"
-                    bg-color="white"
-                    style="width: 40px"
-                    v-model="text"
-                    placeholder="0"
-                  />
-                </div>
-              </div>
-
-              <div class="col-4">
-                <q-avatar class="shadow-12">
-                  <q-img :src="jogo.image2.uri" />
-                </q-avatar>
-                <span class="q-pl-sm"> {{ jogo.team2 }} </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <q-separator class="q-mt-md" vertical spaced="8px" color="white" />
-
-        <q-card-section
-          class="col-3 column q-pt-xl justify-center items-center"
-        >
-          <div>{{ jogo.date }}</div>
-          <div>{{ jogo.hora }}</div>
-        </q-card-section>
-      </div>
     </q-card>
   </q-page>
 </template>
@@ -90,11 +24,11 @@ const jogos = [
     hora: "13:00",
     team1: "Catar",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197618.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/h0FNA5YxLzWChHS5K0o4gw_96x96.png",
     },
     team2: "Equador",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/4854/4854969.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/AKqvkBpIyr-iLOK7Ig7-yQ_96x96.png",
     },
   },
   {
@@ -104,11 +38,11 @@ const jogos = [
     hora: "10:00",
     team1: "Inglaterra",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197485.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/DTqIL8Ba3KIuxGkpXw5ayA_96x96.png",
     },
     team2: "Irã",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197574.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/1oq8Fy7ETpBpZNaCA22ArQ_96x96.png",
     },
   },
   {
@@ -118,11 +52,11 @@ const jogos = [
     hora: "13:00",
     team1: "Senegal",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197377.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/zw3ac5sIbH4DS6zP5auOkQ_96x96.png",
     },
     team2: "Holanda",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/6157/6157397.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/8GEqzfLegwFFpe6X2BODTg_96x96.png",
     },
   },
   {
@@ -132,11 +66,11 @@ const jogos = [
     hora: "16:00",
     team1: "Estados Unidos",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197484.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/wj9uZvn_vZrelLFGH8fnPA_96x96.png",
     },
     team2: "Gales",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197620.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/1JjnDm6Es30LryHzbudyEw_96x96.png",
     },
   },
   {
@@ -146,11 +80,11 @@ const jogos = [
     hora: "07:00",
     team1: "Argentina",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/5315/5315710.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/1xBWyjjkA6vEWopPK3lIPA_96x96.png",
     },
     team2: "Arábia Saudita",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/5111/5111777.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/QoAJxO46fHid3_T-7nRZ0Q_96x96.png",
     },
   },
   {
@@ -160,11 +94,11 @@ const jogos = [
     hora: "10:00",
     team1: "Dinamarca",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197565.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/LaOvu-pyRqRso6uzff55XA_96x96.png",
     },
     team2: "Tunísia",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197624.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/Xs33c9XVUJBX0IkeFn_bIw_96x96.png",
     },
   },
   {
@@ -174,11 +108,11 @@ const jogos = [
     hora: "13:00",
     team1: "México",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197397.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/yJF9xqmUGenD8108FJbg9A_96x96.png",
     },
     team2: "Polônia",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/4628/4628690.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/yTS_Piy3M1wUBnqU0n5aAw_96x96.png",
     },
   },
   {
@@ -188,11 +122,11 @@ const jogos = [
     hora: "16:00",
     team1: "França",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/5921/5921991.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/z3JEQB3coEAGLCJBEUzQ2A_96x96.png",
     },
     team2: "Austrália",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197507.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/jSgw5z0EPOLzdUi-Aomq7Q_96x96.png",
     },
   },
   {
@@ -202,11 +136,11 @@ const jogos = [
     hora: "07:00",
     team1: "Marrocos",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197551.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/I3gt2Ew39ux3GGdZ-4JE3g_96x96.png",
     },
     team2: "Croácia",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197503.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/9toerdOg8xW4CRhDaZxsyw_96x96.png",
     },
   },
   {
@@ -216,11 +150,11 @@ const jogos = [
     hora: "10:00",
     team1: "Alemanha",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197571.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/h1FhPLmDg9AHXzhygqvVPg_96x96.png",
     },
     team2: "Japão",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197604.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/by4OltvtZz7taxuQtkiP3A_96x96.png",
     },
   },
   {
@@ -230,11 +164,11 @@ const jogos = [
     hora: "13:00",
     team1: "Espanha",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197593.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/5hLkf7KFHhmpaiOJQv8LmA_96x96.png",
     },
     team2: "Costa Rica",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197506.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/ixZiM5pj2IvvYc15k-zfeQ_96x96.png",
     },
   },
   {
@@ -244,11 +178,11 @@ const jogos = [
     hora: "16:00",
     team1: "Bélgica",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197583.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/6SF7yEoB60bU5knw-M7R5Q_96x96.png",
     },
     team2: "Canadá",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197430.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/H23oIEP6qK-zNc3O8abnIA_96x96.png",
     },
   },
   {
@@ -258,11 +192,11 @@ const jogos = [
     hora: "07:00",
     team1: "Suíca",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197540.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/1hy9ek4dOIffYULM6k1fqg_96x96.png",
     },
     team2: "Camarões",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197531.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/fmHyTSbJ-cYbY6WJzvqaZQ_96x96.png",
     },
   },
   {
@@ -272,11 +206,11 @@ const jogos = [
     hora: "10:00",
     team1: "Uruguai",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197599.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/KnSUdQWiGRoy89q4x85IgA_96x96.png",
     },
     team2: "Coreia do Sul",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197582.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/Uu5pwNmMHGd5bCooKrS3Lw_96x96.png",
     },
   },
   {
@@ -286,11 +220,11 @@ const jogos = [
     hora: "13:00",
     team1: "Portugal",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197463.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/HJ3_2c4w791nZJj7n-Lj3Q_96x96.png",
     },
     team2: "Gana",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197381.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/VJQ1emg0TOubjGnap4vWuw_96x96.png",
     },
   },
   {
@@ -300,11 +234,11 @@ const jogos = [
     hora: "16:00",
     team1: "Brasil",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/7826/7826359.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/zKLzoJVYz0bb6oAnPUdwWQ_96x96.png",
     },
     team2: "Sérvia",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197602.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/xyh1vmZ-xJH2iJCKjqS1Ow_96x96.png",
     },
   },
   {
@@ -314,11 +248,11 @@ const jogos = [
     hora: "07:00",
     team1: "Gales",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197620.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/1JjnDm6Es30LryHzbudyEw_96x96.png",
     },
     team2: "Irã",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197574.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/1oq8Fy7ETpBpZNaCA22ArQ_96x96.png",
     },
   },
   {
@@ -328,11 +262,11 @@ const jogos = [
     hora: "10:00",
     team1: "Catar",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197618.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/h0FNA5YxLzWChHS5K0o4gw_96x96.png",
     },
     team2: "Senegal",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197377.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/zw3ac5sIbH4DS6zP5auOkQ_96x96.png",
     },
   },
   {
@@ -342,11 +276,11 @@ const jogos = [
     hora: "13:00",
     team1: "Holanda",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/6157/6157397.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/8GEqzfLegwFFpe6X2BODTg_96x96.png",
     },
     team2: "Equador",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/4854/4854969.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/AKqvkBpIyr-iLOK7Ig7-yQ_96x96.png",
     },
   },
   {
@@ -356,11 +290,11 @@ const jogos = [
     hora: "16:00",
     team1: "Inglaterra",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197485.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/DTqIL8Ba3KIuxGkpXw5ayA_96x96.png",
     },
     team2: "Estados Unidos",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197484.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/wj9uZvn_vZrelLFGH8fnPA_96x96.png",
     },
   },
   {
@@ -370,11 +304,11 @@ const jogos = [
     hora: "07:00",
     team1: "Tunísia",
     image1: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197624.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/Xs33c9XVUJBX0IkeFn_bIw_96x96.png",
     },
     team2: "Austrália",
     image2: {
-      uri: "https://cdn-icons-png.flaticon.com/512/197/197507.png",
+      uri: "https://ssl.gstatic.com/onebox/media/sports/logos/jSgw5z0EPOLzdUi-Aomq7Q_96x96.png",
     },
   },
   {
