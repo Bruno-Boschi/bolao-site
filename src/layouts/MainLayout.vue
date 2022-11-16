@@ -1,4 +1,5 @@
 <template>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <q-img src="../assets/neutro.jpg" class="wave" alt="wave" />
   <q-layout class="q-px-xl">
     <div class="q-px-sm q-py-md q-px-xl">
@@ -69,22 +70,22 @@ const linksList = [
   {
     title: "Dashboard",
     icon: "mdi-view-dashboard-variant",
-    to: "/",
+    to: "/painel/dashboard",
   },
   {
     title: "Ranking",
     icon: "code",
-    to: "/ranking",
+    to: "/painel/ranking",
   },
   {
     title: "Fase de Grupo",
     icon: "chat",
-    to: "/fase-grupo",
+    to: "/painel/fase-grupo",
   },
   {
     title: "Eliminatorias",
     icon: "record_voice_over",
-    to: { nome: "home" },
+    to: "/painel/fase-eliminatorias",
   },
 ];
 

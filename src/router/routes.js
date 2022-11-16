@@ -1,25 +1,30 @@
 const routes = [
   {
     path: "/",
+    component: () => import("layouts/FirstPage.vue"),
+  },
+
+  {
+    path: "/painel",
     component: () => import("layouts/MainLayout.vue"),
     children: [
       {
-        path: "",
+        path: "/painel/dashboard",
         component: () => import("pages/dashboard/DashboardPage.vue"),
       },
       {
-        path: "/fase-grupo",
+        path: "/painel/fase-grupo",
         component: () => import("pages/grupo/GrupoPage.vue"),
       },
       {
-        path: "/ranking",
+        path: "/painel/ranking",
         component: () => import("pages/ranking/RankingPage.vue"),
       },
+      {
+        path: "/painel/fase-eliminatorias",
+        component: () => import("pages/grupo/EliminatoriasPage.vue"),
+      },
     ],
-  },
-  {
-    path: "/welcome",
-    component: () => import("../pages/LoginPage.vue"),
   },
 
   // Always leave this as last one,
