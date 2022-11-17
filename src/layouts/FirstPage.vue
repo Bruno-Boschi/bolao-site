@@ -70,8 +70,8 @@ export default {
   name: "FirstPage",
   data() {
     return {
-      username: "caio@caionorder.com",
-      password: "iconeSenna88@",
+      username: "",
+      password: "",
     };
   },
 
