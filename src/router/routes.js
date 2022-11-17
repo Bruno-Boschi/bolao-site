@@ -7,6 +7,7 @@ const routes = [
   {
     path: "/painel",
     component: () => import("layouts/MainLayout.vue"),
+
     children: [
       {
         path: "/painel/dashboard",
@@ -15,6 +16,7 @@ const routes = [
       {
         path: "/painel/fase-grupo",
         component: () => import("pages/grupo/GrupoPage.vue"),
+        name: "faseGrupo",
       },
       {
         path: "/painel/ranking",

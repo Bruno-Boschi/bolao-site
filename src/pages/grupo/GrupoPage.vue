@@ -11,22 +11,22 @@
       </q-card-section>
     </q-card>
     <q-card
-      v-for="jogo in jogos"
+      v-for="jogo in jogos2"
       :key="jogo.id"
       style="height: 140px"
       class="border bg-grey-9 borda text-white q-mb-md"
     >
       <div class="row">
         <div class="row col-8">
-          <div class="q-pl-lg q-pt-sm">{{ jogo.group }}</div>
+          <div class="q-pl-lg q-pt-sm">Grupo {{ jogo.grupo }}</div>
 
           <div class="col-8 col-md-12 q-pt-lg">
             <div class="row">
               <div class="col-4 row justify-end">
                 <div>
-                  <span class="q-pr-sm">{{ jogo.team1 }}</span>
+                  <span class="q-pr-sm">{{ jogo.time1_nome }}</span>
                   <q-avatar class="shadow-12">
-                    <q-img :src="jogo.image1.uri" />
+                    <q-img :src="jogo.time1_imgURL" />
                   </q-avatar>
                 </div>
               </div>
@@ -58,9 +58,9 @@
 
               <div class="col-4">
                 <q-avatar class="shadow-12">
-                  <q-img :src="jogo.image2.uri" />
+                  <q-img :src="jogo.time2_imgURL" />
                 </q-avatar>
-                <span class="q-pl-sm"> {{ jogo.team2 }} </span>
+                <span class="q-pl-sm"> {{ jogo.time2_nome }} </span>
               </div>
             </div>
           </div>
@@ -71,7 +71,7 @@
         <q-card-section
           class="col-3 column q-pt-xl justify-center items-center"
         >
-          <div>{{ jogo.date }}</div>
+          <div>{{ jogo.data }}</div>
           <div>{{ jogo.hora }}</div>
         </q-card-section>
       </div>
@@ -80,7 +80,9 @@
 </template>
 
 <script>
+import { useQuasar } from "quasar";
 import { defineComponent } from "vue";
+import { api } from "../../boot/axios";
 
 const jogos = [
   {
@@ -756,14 +758,34 @@ const jogos = [
     },
   },
 ];
-
+let $q;
 export default defineComponent({
-  name: "IndexPage",
+  name: "GrupoPage",
 
   data() {
     return {
       jogos,
+      jogos2: [],
+      text: "",
     };
+  },
+
+  methods: {
+    getJogos() {
+      api
+        .get("/jogos-grupos")
+        .then((response) => {
+          this.jogos2 = response.data;
+        })
+        .catch(() => {
+          console.log("nao deu");
+        });
+    },
+  },
+
+  mounted() {
+    $q = useQuasar();
+    this.getJogos();
   },
 });
 </script>

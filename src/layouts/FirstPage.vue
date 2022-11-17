@@ -33,8 +33,8 @@
         </q-card-section>
         <q-card-section>
           <q-form class="q-gutter-md" @submit.prevent="submitForm">
-            <q-input label="Username" v-model="login.username"> </q-input>
-            <q-input label="Password" type="password" v-model="login.password">
+            <q-input label="Username" v-model="username"> </q-input>
+            <q-input label="Password" type="password" v-model="password">
             </q-input>
             <div>
               <q-btn
@@ -44,6 +44,7 @@
                 label="Login"
                 rounded
               ></q-btn>
+
               <div class="text-center q-mt-sm q-gutter-lg">
                 <router-link class="text-white" to="/login"
                   >Esqueceu a senha?</router-link
@@ -59,36 +60,27 @@
     </div>
   </div>
 </template>
+
 <script>
 import { useQuasar } from "quasar";
+import { api } from "../boot/axios";
 
 let $q;
 export default {
   name: "FirstPage",
   data() {
     return {
-      login: {
-        username: "BrunoBoschi",
-        password: "a2d4g6j8",
-      },
+      username: "caio@caionorder.com",
+      password: "iconeSenna88@",
     };
   },
 
   methods: {
     submitForm() {
-      if (!this.login.username || !this.login.password) {
-        $q.notify({
-          type: "negative",
-          message: "Os dados informados são inválidos.",
-        });
-      } else if (this.login.password.length < 6) {
-        $q.notify({
-          type: "negative",
-          message: "A senha deve ter 6 ou mais caracteres.",
-        });
-      } else {
-        console.log("login");
-      }
+      api.post("/auth", {
+        email: this.username,
+        password: this.password,
+      });
     },
   },
 
