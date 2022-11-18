@@ -64,29 +64,43 @@
 <script>
 import { useQuasar } from "quasar";
 import { api } from "../boot/axios";
+import { LocalStorage } from "quasar";
+import router from "src/router";
 
-let $q;
+const $q = useQuasar();
+
 export default {
   name: "FirstPage",
   data() {
     return {
-      username: "",
-      password: "",
+      username: "caio@caionorder.com",
+      password: "iconeSenna88@",
     };
   },
 
   methods: {
     submitForm() {
-      api.post("/auth", {
-        email: this.username,
-        password: this.password,
-      });
+      this.$q.loading.show();
+      api
+        .post("/auth", {
+          email: this.username,
+          password: this.password,
+        })
+        .then((response) => {
+          let token = response.data.token;
+          LocalStorage.set("token", token);
+          this.$q.loading.hide();
+          router.push({ path: "/painel" });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
 
-  mounted() {
-    $q = useQuasar();
-  },
+  // mounted() {
+  //
+  // },
 };
 </script>
 
