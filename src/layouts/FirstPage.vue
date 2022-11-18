@@ -1,61 +1,133 @@
 <template>
-  <q-img src="../assets/wave.jpg" class="wave" alt="login-wave" />
+  <q-img src="../assets/neutro.jpg" class="wave" alt="login-wave" />
+
+  <!-- DESKTOP -->
+  <q-toolbar
+    class="bg-teste opacidade text-white shadow-12"
+    style="height: 10vh"
+    v-if="!$q.screen.lt.sm"
+  >
+    <div class="q-pl-lg">BEM VINDO</div>
+    <q-space />
+    <q-form
+      class="q-gutter-md row q-pr-lg"
+      v-bind:class="{
+        'justify-center': $q.screen.md || $q.screen.sm || $q.screen.xs,
+      }"
+      @submit.prevent="submitForm"
+    >
+      <q-input
+        label="Username"
+        outlined
+        dense
+        rounded
+        bg-color="white"
+        v-model="username"
+      >
+      </q-input>
+      <q-input
+        label="Password"
+        outlined
+        dense
+        rounded
+        bg-color="white"
+        type="password"
+        v-model="password"
+      >
+      </q-input>
+      <div class="justify-center">
+        <q-btn
+          class="full-width"
+          color="primary"
+          type="submit"
+          label="Login"
+          rounded
+        ></q-btn>
+      </div>
+    </q-form>
+  </q-toolbar>
+
+  <!-- MOBILE -->
+  <q-toolbar
+    class="bg-teste opacidade text-white shadow-12"
+    style="height: 25vh"
+    v-if="$q.screen.lt.sm"
+  >
+    <q-form class=" " @submit.prevent="submitForm">
+      <div class="row justify-center">
+        <div class="q-pb-md">
+          <q-input
+            style="width: 250px"
+            label="Username"
+            outlined
+            dense
+            rounded
+            bg-color="white"
+            v-model="username"
+          >
+          </q-input>
+        </div>
+        <div class="q-pb-md">
+          <q-input
+            style="width: 250px"
+            label="Password"
+            outlined
+            dense
+            rounded
+            bg-color="white"
+            type="password"
+            v-model="password"
+          >
+          </q-input>
+        </div>
+      </div>
+
+      <div class="row justify-center">
+        <q-btn
+          color="primary"
+          style="width: 250px"
+          type="submit"
+          label="Login"
+          rounded
+        ></q-btn>
+      </div>
+    </q-form>
+  </q-toolbar>
+
   <div class="row" style="height: 90vh">
-    <div class="col-0 col-md-6 flex justify-center content-center">
+    <div
+      class="col-12 col-md-3 flex justify-center content-center"
+      v-bind:style="
+        $q.screen.lt.sm || $q.screen.lt.md ? { display: 'none' } : {}
+      "
+    >
       <!-- <q-img
         src="../assets/15635386_5637956-removebg-preview.png"
         class="responsive"
         alt="login-image"
       /> -->
     </div>
-    <div
-      v-bind:class="{
-        'justify-center': $q.screen.md || $q.screen.sm || $q.screen.xs,
-      }"
-      class="col-12 col-md-6 flex content-center"
-    >
+    <div class="col-12 col-md-9 flex content-center justify-center">
       <q-card
-        v-bind:style="$q.screen.lt.sm ? { width: '80%' } : { width: '50%' }"
+        v-bind:style="
+          $q.screen.lt.sm
+            ? { width: '80%', height: '80%' }
+            : { width: '50%', height: '80%' }
+        "
+        v-bind:class="{
+          'justify-center': $q.screen.md || $q.screen.sm || $q.screen.xs,
+        }"
       >
         <q-card-section>
-          <q-avatar size="120px" class="absolute-center shadow-10">
-            <img src="../assets/lock.png" alt="avatar" />
-          </q-avatar>
-        </q-card-section>
-        <q-card-section>
           <div class="q-pt-lg">
-            <div class="col text-h6 ellipsis flex justify-center">
+            <div class="col flex justify-center">
               <h2 class="text-h2 text-uppercase q-my-none text-weight-regular">
-                Login
+                Venha participar do nosso bolão Join Ads
               </h2>
             </div>
           </div>
         </q-card-section>
-        <q-card-section>
-          <q-form class="q-gutter-md" @submit.prevent="submitForm">
-            <q-input label="Username" v-model="username"> </q-input>
-            <q-input label="Password" type="password" v-model="password">
-            </q-input>
-            <div>
-              <q-btn
-                class="full-width"
-                color="primary"
-                type="submit"
-                label="Login"
-                rounded
-              ></q-btn>
-
-              <div class="text-center q-mt-sm q-gutter-lg">
-                <router-link class="text-white" to="/login"
-                  >Esqueceu a senha?</router-link
-                >
-                <router-link class="text-white" to="/login"
-                  >Criar conta</router-link
-                >
-              </div>
-            </div>
-          </q-form>
-        </q-card-section>
+        <q-card-section> </q-card-section>
       </q-card>
     </div>
   </div>
@@ -80,7 +152,9 @@ export default {
 
   methods: {
     submitForm() {
-      this.$q.loading.show();
+      this.$q.loading.show({
+        delay: 200, // ms
+      });
       api
         .post("/auth", {
           email: this.username,
@@ -94,6 +168,7 @@ export default {
         })
         .catch((error) => {
           console.log(error);
+          this.$q.loading.hide();
         });
     },
   },

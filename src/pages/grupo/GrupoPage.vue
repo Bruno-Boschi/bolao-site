@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page v-if="show">
     <q-card
       class="q-px-sm borda q-mb-xl bg-grey-box shadow-10"
       style="height: 20 px"
@@ -11,7 +11,6 @@
       </q-card-section>
     </q-card>
     <q-card
-      :v-if="loading"
       v-for="jogo in jogos2"
       :key="jogo.id"
       style="height: 140px"
@@ -93,7 +92,7 @@ export default defineComponent({
     return {
       jogos2: [],
       text: "",
-      loading: true,
+      show: false,
     };
   },
 
@@ -103,19 +102,15 @@ export default defineComponent({
         .get("/jogos-grupos")
         .then((response) => {
           this.jogos2 = response.data;
-          this.loading = false;
-          this.$q.loading.hide();
+          this.show = true;
         })
         .catch(() => {
-          console.log("nao deu");
+          console.log("nao de");
         });
     },
   },
 
-  mounted() {
-    this.$q.loading.show({
-      delay: 400, // ms
-    });
+  beforeMount() {
     this.getJogos();
   },
 });

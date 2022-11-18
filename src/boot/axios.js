@@ -6,7 +6,7 @@ import { LocalStorage, Notify } from "quasar";
 import { Cookies } from "quasar";
 import { router } from "src/router";
 
-const api = axios.create({ baseURL: "http://127.0.0.1:8000/api" });
+const api = axios.create({ baseURL: "http://192.168.3.7:8000/api" });
 
 api.interceptors.request.use(
   function (config) {
