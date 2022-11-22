@@ -1,9 +1,10 @@
 <template>
   <q-img src="../assets/neutro.jpg" class="wave" alt="login-wave" />
+  <q-img src="../assets/—Png.png" class="q-ml-lg boneco" alt="login-image" />
 
   <!-- DESKTOP -->
   <q-toolbar
-    class="bg-teste opacidade text-white shadow-12"
+    class="bg-teste text-white shadow-12"
     style="height: 10vh"
     v-if="!$q.screen.lt.sm"
   >
@@ -47,9 +48,29 @@
     </q-form>
   </q-toolbar>
 
+  <div style="height: 75vh" v-if="!$q.screen.lt.sm">
+    <div class="q-pt-xl flex justify-center">
+      <q-card
+        class="shadow-10 card text-white"
+        style="width: 500px; height: 75vh"
+      >
+        <q-card-section>
+          <div class="q-pt-lg">
+            <div class="col flex justify-center text-h3">BOLÃO JOIN ADS</div>
+          </div>
+        </q-card-section>
+        <q-card-section> VENHA PARTICIPAR DO NOSSO BOLAO </q-card-section>
+        <q-card-section> JUNTE PONTOS </q-card-section>
+        <q-card-section> SEJA O MELHOR </q-card-section>
+        <q-card-section> UMA GRANDE SURPRESA TE ESPERA</q-card-section>
+      </q-card>
+    </div>
+  </div>
+  <!-- FIM DESK -->
+
   <!-- MOBILE -->
   <q-toolbar
-    class="bg-teste opacidade text-white shadow-12"
+    class="bg-teste text-white shadow-12"
     style="height: 25vh"
     v-if="$q.screen.lt.sm"
   >
@@ -94,43 +115,25 @@
     </q-form>
   </q-toolbar>
 
-  <div class="row" style="height: 90vh">
-    <div
-      class="col-12 col-md-3 flex justify-center content-center"
-      v-bind:style="
-        $q.screen.lt.sm || $q.screen.lt.md ? { display: 'none' } : {}
-      "
-    >
-      <!-- <q-img
-        src="../assets/15635386_5637956-removebg-preview.png"
-        class="responsive"
-        alt="login-image"
-      /> -->
-    </div>
-    <div class="col-12 col-md-9 flex content-center justify-center">
+  <div style="height: 70vh" v-if="$q.screen.lt.sm">
+    <div class="q-pt-md flex justify-center">
       <q-card
-        v-bind:style="
-          $q.screen.lt.sm
-            ? { width: '80%', height: '80%' }
-            : { width: '50%', height: '80%' }
-        "
-        v-bind:class="{
-          'justify-center': $q.screen.md || $q.screen.sm || $q.screen.xs,
-        }"
+        style="width: 80%; height: 70vh"
+        class="shadow-10 card text-white"
       >
         <q-card-section>
           <div class="q-pt-lg">
-            <div class="col flex justify-center">
-              <h2 class="text-h2 text-uppercase q-my-none text-weight-regular">
-                Venha participar do nosso bolão Join Ads
-              </h2>
-            </div>
+            <div class="col flex justify-center text-h5">BOLÃO JOIN ADS</div>
           </div>
         </q-card-section>
-        <q-card-section> </q-card-section>
+        <q-card-section> VENHA PARTICIPAR DO NOSSO BOLAO </q-card-section>
+        <q-card-section> JUNTE PONTOS </q-card-section>
+        <q-card-section> SEJA O MELHOR </q-card-section>
+        <q-card-section> UMA GRANDE SURPRESA TE ESPERA</q-card-section>
       </q-card>
     </div>
   </div>
+  <!-- FIM MOBILE -->
 </template>
 
 <script>
@@ -186,5 +189,22 @@ export default {
   left: 0;
   bottom: 0;
   z-index: -1;
+}
+
+.boneco {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.card {
+  font-family: "Lucida Console", Monaco, monospace;
+  border-radius: 16px 16px 16px 16px;
+  -moz-border-radius: 16px 16px 16px 16px;
+  -webkit-border-radius: 16px 16px 16px 16px;
+  border: 1px solid #000000;
+  opacity: 0.9;
+  background: linear-gradient(to right, #781645 41%, #2b0e1c 100%);
 }
 </style>
